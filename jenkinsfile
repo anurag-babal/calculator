@@ -14,10 +14,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-          dockerBuild(
-            imageName: 'calculator',
-            dockerfilePath: '.'
-          )
+          sh 'docker build -t calculator .'
         }
       }
     }
