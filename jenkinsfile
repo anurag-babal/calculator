@@ -1,0 +1,33 @@
+pipeline {
+  agent any
+
+  stages {
+
+    stage('Checkout') {
+      steps {
+        script {
+          git branch: 'master' url:'https://github.com/anurag-babal/calculator.git'
+        }
+      }
+    }
+
+    stage('Build Docker Image') {
+      steps {
+        script {
+          docker.build('calculator', .)
+        }
+      }
+    }
+
+    stage('Push Docker Image') {
+      steps {
+        script {
+          docker.withRegistry('', 'DockerHubCred') {
+            sh 'docker tag calculator anuragbabal/calculator'
+            sh 'docker push anuragbabal/calculator'
+          }
+        }
+      }
+    }
+  }
+}
