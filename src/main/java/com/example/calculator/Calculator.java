@@ -13,6 +13,7 @@ public class Calculator {
     System.out.print("Enter second number: ");
     second = scanner.nextInt();
     System.out.println("Result is : " + calculator.add(first, second));
+    System.out.println("Enter your choice:");
     scanner.close();
   }
 
