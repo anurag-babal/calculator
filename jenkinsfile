@@ -11,6 +11,22 @@ pipeline {
       }
     }
 
+    stage('Build the code') {
+      steps {
+        script {
+          sh 'mvn clean package'
+        }
+      }
+    }
+
+    stage('Test the code') {
+      steps {
+        script {
+          sh 'mvn test'
+        }
+      }
+    }
+
     stage('Build Docker Image') {
       steps {
         script {
@@ -35,7 +51,6 @@ pipeline {
         script {
           ansiblePlaybook(
             playbook: 'deploy.yml'
-            // inventory: 'inventory'
           )
         }
       }

@@ -1,2 +1,7 @@
-FROM ubuntu:latest
-COPY calculator.sh /app/calculator.sh
+FROM openjdk:17-jre-alpine
+
+WORKDIR /app
+
+COPY target/*.jar ./
+
+CMD ["java", "-jar", "calculator-1.0.jar"]
