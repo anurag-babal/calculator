@@ -15,6 +15,7 @@ public class Calculator {
     System.out.println("Result is : " + calculator.add(first, second));
     System.out.println("1. Addition");
     System.out.println("2. Subtraction");
+    System.out.println("3. Multiplication");
     System.out.println("Enter your choice:");
     scanner.close();
   }
