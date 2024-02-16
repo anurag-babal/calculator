@@ -7,18 +7,34 @@ public class Calculator {
   public static void main(String[] args) {
     Calculator calculator = new Calculator();
     Scanner scanner = new Scanner(System.in);
-    int first, second, choice;
+    int choice;
+    Double first, second;
     System.out.print("Enter first number: ");
-    first = scanner.nextInt();
+    first = scanner.nextDouble();
     System.out.print("Enter second number: ");
-    second = scanner.nextInt();
-    System.out.println("Result is : " + calculator.add(first, second));
+    second = scanner.nextDouble();
     System.out.println("1. Addition");
     System.out.println("2. Subtraction");
     System.out.println("3. Multiplication");
     System.out.println("4. Division");
-    System.out.println("Enter your choice:");
+    System.out.print("Enter your choice:");
     choice = scanner.nextInt();
+    switch (choice) {
+        case 1:
+            System.out.println("Result is : " + calculator.add(first, second));
+            break;
+        case 2:
+            System.out.println("Result is : " + calculator.subtract(first, second));
+            break;
+        case 3:
+            System.out.println("Result is : " + calculator.multiply(first, second));
+            break;
+        case 4:
+            System.out.println("Result is : " + calculator.divide(first, second));
+            break;
+        default:
+            System.out.println("Enter correct choice");
+    }
     scanner.close();
   }
 
