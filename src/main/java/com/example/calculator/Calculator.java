@@ -14,6 +14,7 @@ public class Calculator {
     second = scanner.nextInt();
     System.out.println("Result is : " + calculator.add(first, second));
     System.out.println("1. Addition");
+    System.out.println("2. Subtraction");
     System.out.println("Enter your choice:");
     scanner.close();
   }
