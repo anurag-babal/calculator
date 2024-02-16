@@ -7,7 +7,7 @@ public class Calculator {
   public static void main(String[] args) {
     Calculator calculator = new Calculator();
     Scanner scanner = new Scanner(System.in);
-    int first, second;
+    int first, second, choice;
     System.out.print("Enter first number: ");
     first = scanner.nextInt();
     System.out.print("Enter second number: ");
@@ -18,6 +18,7 @@ public class Calculator {
     System.out.println("3. Multiplication");
     System.out.println("4. Division");
     System.out.println("Enter your choice:");
+    choice = scanner.nextInt();
     scanner.close();
   }
 
