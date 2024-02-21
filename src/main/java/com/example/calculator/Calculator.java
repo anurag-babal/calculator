@@ -15,6 +15,7 @@ public class Calculator {
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication");
         System.out.println("4. Division");
+        System.out.println("0. Exit");
         System.out.print("Enter your choice:");
         choice = scanner.nextInt();
         System.out.print("Enter first number: ");
