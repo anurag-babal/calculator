@@ -35,6 +35,9 @@ public class Calculator {
             case 4:
                 System.out.println("Result is : " + calculator.divide(first, second));
                 break;
+            case 0:
+                exit = true;
+                break;
             default:
                 System.out.println("Enter correct choice");
         }
