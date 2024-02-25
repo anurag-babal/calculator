@@ -9,8 +9,7 @@ public class Calculator {
 		Scanner scanner = new Scanner(System.in);
 		int choice;
 		int first, second;
-		boolean exit = false;
-		while (!exit) {
+		while (true) {
 			System.out.println("1. Square Root");
 			System.out.println("2. Factorial");
 			System.out.println("3. Natural logarithm");
@@ -18,6 +17,9 @@ public class Calculator {
 			System.out.println("0. Exit");
 			System.out.print("Enter your choice:");
 			choice = scanner.nextInt();
+			if (choice == 0) {
+				break;
+			}
 			System.out.print("Enter number: ");
 			first = scanner.nextInt();
 			switch (choice) {
@@ -34,9 +36,6 @@ public class Calculator {
 					System.out.print("Enter exponent: ");
 					second = scanner.nextInt();
 					System.out.println("Result is : " + calculator.power(first, second));
-					break;
-				case 0:
-					exit = true;
 					break;
 				default:
 					System.out.println("Enter correct choice");
