@@ -9,31 +9,26 @@ public class CalculatorTest {
     private final Calculator calculator = new Calculator();
 
     @Test
-    public void testAdd() {
-        double result = calculator.add(2.5, 3.1);
-        assertEquals(5.6, result, 0.001);
+    public void testRoot() {
+        double result = calculator.root(9);
+        assertEquals(3, result, 0.001);
     }
 
     @Test
-    public void testSubtract() {
-        double result = calculator.subtract(5.0, 2.2);
-        assertEquals(2.8, result, 0.001);
+    public void testFactorial() {
+        double result = calculator.factorial(5);
+        assertEquals(120, result, 0.001);
     }
 
     @Test
-    public void testMultiply() {
-        double result = calculator.multiply(4.0, 3.0);
-        assertEquals(12.0, result, 0.001);
+    public void testLog() {
+        double result = calculator.log(5);
+        assertEquals(1.61, result, 0.001);
     }
 
     @Test
-    public void testDivide() {
-        double result = calculator.divide(10.0, 2.0);
-        assertEquals(5.0, result, 0.001);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testDivideByZero() {
-        calculator.divide(10.0, 0.0);
+    public void testPower() {
+        double result = calculator.power(5, 2);
+        assertEquals(25, result, 0.001);
     }
 }

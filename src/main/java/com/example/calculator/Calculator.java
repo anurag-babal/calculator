@@ -4,63 +4,66 @@ import java.util.Scanner;
 
 public class Calculator {
 
-  public static void main(String[] args) {
-    Calculator calculator = new Calculator();
-    Scanner scanner = new Scanner(System.in);
-    int choice;
-    Double first, second;
-    boolean exit = false;
-    while (!exit) {
-        System.out.println("1. Factorial");
-        System.out.println("2. Subtraction");
-        System.out.println("3. Multiplication");
-        System.out.println("4. Division");
-        System.out.println("0. Exit");
-        System.out.print("Enter your choice:");
-        choice = scanner.nextInt();
-        System.out.print("Enter first number: ");
-        first = scanner.nextDouble();
-        System.out.print("Enter second number: ");
-        second = scanner.nextDouble();
-        switch (choice) {
-            case 1:
-                System.out.println("Result is : " + calculator.add(first, second));
-                break;
-            case 2:
-                System.out.println("Result is : " + calculator.subtract(first, second));
-                break;
-            case 3:
-                System.out.println("Result is : " + calculator.multiply(first, second));
-                break;
-            case 4:
-                System.out.println("Result is : " + calculator.divide(first, second));
-                break;
-            case 0:
-                exit = true;
-                break;
-            default:
-                System.out.println("Enter correct choice");
-        }
-    }
-    scanner.close();
-  }
+	public static void main(String[] args) {
+		Calculator calculator = new Calculator();
+		Scanner scanner = new Scanner(System.in);
+		int choice;
+		int first, second;
+		boolean exit = false;
+		while (!exit) {
+			System.out.println("1. Square Root");
+			System.out.println("2. Factorial");
+			System.out.println("3. Natural logarithm");
+			System.out.println("4. Power");
+			System.out.println("0. Exit");
+			System.out.print("Enter your choice:");
+			choice = scanner.nextInt();
+			System.out.print("Enter number: ");
+			first = scanner.nextInt();
+			switch (choice) {
+				case 1:
+					System.out.println("Result is : " + calculator.root(first));
+					break;
+				case 2:
+					System.out.println("Result is : " + calculator.factorial(first));
+					break;
+				case 3:
+					System.out.println("Result is : " + calculator.log(first));
+					break;
+				case 4:
+					System.out.print("Enter exponent: ");
+					second = scanner.nextInt();
+					System.out.println("Result is : " + calculator.power(first, second));
+					break;
+				case 0:
+					exit = true;
+					break;
+				default:
+					System.out.println("Enter correct choice");
+			}
+		}
+		scanner.close();
+	}
 
-  public double add(double num1, double num2) {
-      return num1 + num2;
-  }
+	public double root(int num1) {
+		return Math.sqrt(num1);
+	}
 
-  public double subtract(double num1, double num2) {
-      return num1 - num2;
-  }
+	public int factorial(int num1) {
+		int ans = 1;
+		for (int i = 1; i <= num1; i++)
+			ans = ans * i;
+		return ans;
+	}
 
-  public double multiply(double num1, double num2) {
-      return num1 * num2;
-  }
+	public double log(int num1) {
+		double ans;
+		ans = Math.log(num1);
+		ans = Math.round(ans * Math.pow(10, 2)) / Math.pow(10, 2);
+		return ans;
+	}
 
-  public double divide(double num1, double num2) {
-      if (num2 == 0) {
-          throw new IllegalArgumentException("Division by zero is not allowed.");
-      }
-      return num1 / num2;
-  }
+	public double power(double num1, double num2) {
+		return Math.pow(num1, num2);
+	}
 }
