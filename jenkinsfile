@@ -11,18 +11,18 @@ pipeline {
       }
     }
 
-    stage('Build the code') {
-      steps {
-        script {
-          sh 'mvn clean package'
-        }
-      }
-    }
-
     stage('Test the code') {
       steps {
         script {
           sh 'mvn test'
+        }
+      }
+    }
+    
+    stage('Build the code') {
+      steps {
+        script {
+          sh 'mvn clean package'
         }
       }
     }

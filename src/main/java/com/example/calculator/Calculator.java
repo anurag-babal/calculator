@@ -30,7 +30,8 @@ public class Calculator {
 					System.out.println("Result is : " + calculator.factorial(first));
 					break;
 				case 3:
-					System.out.println("Result is : " + calculator.log(first));
+					System.out.println("Not Yet Implemented");
+					// System.out.println("Result is : " + calculator.log(first));
 					break;
 				case 4:
 					System.out.print("Enter exponent: ");

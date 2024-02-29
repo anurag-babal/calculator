@@ -1,2 +1,6 @@
-localhost ansible_user=arch ansible_ssh_pass=arch
-ansible_ssh_common_args = '-o StrictHostKeyChecking=no'
+[webserver]
+server1 192.168.56.11
+server2 192.168.56.11
+
+[database]
+server1 192.168.56.11
