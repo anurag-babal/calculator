@@ -18,4 +18,5 @@
         image: anuragbabal/calculator
         interactive: true
         tty: true
+        command: /bin/bash
       # shell: docker run -it -d --name calculator anuragbabal/calculator /bin/bash
