@@ -15,7 +15,7 @@
     - name: Create and run docker container
       docker_container:
         name: calculator
-        image: anuragbaba/calculator
+        image: anuragbabal/calculator
         interactive: true
         tty: true
       # shell: docker run -it -d --name calculator anuragbabal/calculator /bin/bash
