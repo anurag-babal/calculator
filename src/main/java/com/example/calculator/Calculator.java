@@ -34,9 +34,9 @@ public class Calculator {
 					break;
 				case 3:
 					System.out.println("Not Yet Implemented");
-					System.out.print("Enter number: ");
+					/* System.out.print("Enter number: ");
 					first = scanner.nextDouble();
-					System.out.println("Result is : " + calculator.log(first));
+					System.out.println("Result is : " + calculator.log(first)); */
 					break;
 				case 4:
 					System.out.print("Enter number: ");
